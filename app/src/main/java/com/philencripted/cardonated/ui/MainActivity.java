@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 // show progress while loading data
                 progressBar.setVisibility(View.VISIBLE);
 
-                // setup user list
+                // setup movie list
                 setUpUserList(movies);
 
                 //hide progress after ui is populated

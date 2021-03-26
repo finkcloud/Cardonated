@@ -2,6 +2,7 @@ package com.philencripted.cardonated.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -80,6 +81,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             //debug
             System.out.println("TESTER"+popularity);
+            Log.d("TEST:", avgVote + popularity + vote);
 
 
 

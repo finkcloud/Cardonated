@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.philencripted.cardonated.R;
 import com.philencripted.cardonated.model.Result;
-import com.philencripted.cardonated.ui.MainActivity;
 import com.philencripted.cardonated.ui.MovieDetailsActivity;
 
 import java.util.List;
@@ -43,14 +42,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.UserViewHold
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
 
-        // get reference to a single user
+        // get reference to a single moview
         final Result movieresult = movieList.get(position);
 
-        // bind user to UI
+        // bind movie to UI
         Glide.with(context).load("https://image.tmdb.org/t/p/w500/"+movieresult.getPosterPath()).into(holder.imageView);        holder.movieTitleTV.setText(movieresult.getTitle());
         holder.overViewTV.setText(movieresult.getOverview());
 
-        // split name for initials
 
 
         String newOverview;
@@ -62,12 +60,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.UserViewHold
             newOverview = movieresult.getOverview();
         }
 
-        // display first initial on the text view
         holder.overViewTV.setText(newOverview);
         holder.releaseDateTv.setText(movieresult.getReleaseDate());
 
 
-        // handle details navigation with user info
+        // handle details navigation with movie info
 
         // implement setOnClickListener event on item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -75,15 +72,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.UserViewHold
             public void onClick(View view) {
                 // open detail activity on item click
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
-                intent.putExtra("title", movieresult.getTitle()); // put name data in Intent
-                intent.putExtra("date", movieresult.getReleaseDate()); // put email data in Intent
-                intent.putExtra("backdrop",movieresult.getBackdropPath()); // put phone data in Intent
-                intent.putExtra("overview",movieresult.getOverview()); // put phone data in Intent
+                intent.putExtra("title", movieresult.getTitle());
+                intent.putExtra("date", movieresult.getReleaseDate());
+                intent.putExtra("backdrop",movieresult.getBackdropPath());
+                intent.putExtra("overview",movieresult.getOverview());
 
-                intent.putExtra("poster", movieresult.getPosterPath()); // put website data in Intent
-                intent.putExtra("vote_count", movieresult.getVoteCount()); // put address data in Intent
-                intent.putExtra("vote_avg", movieresult.getVoteAverage()); // put company data in Intent
-                intent.putExtra("popularity", movieresult.getPopularity()); // put company data in Intent
+                intent.putExtra("poster", movieresult.getPosterPath());
+                intent.putExtra("vote_count", movieresult.getVoteCount());
+                intent.putExtra("popularity", movieresult.getPopularity());
 
 
                 context.startActivity(intent); // start Intent

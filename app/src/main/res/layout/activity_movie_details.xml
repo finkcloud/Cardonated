@@ -35,7 +35,7 @@
             </FrameLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="300dp"
                 android:elevation="4dp">
 
                 <LinearLayout
@@ -73,9 +73,10 @@
 
                         <TextView
                             android:id="@+id/vote"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="Sarah Campbell"
+                            android:layout_weight="1"
                             android:textColor="#0C0C0C"
                             android:textSize="12sp"
                             android:textStyle="normal"
@@ -83,7 +84,8 @@
                             />
                         <TextView
                             android:id="@+id/avgvote"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:text="Sarah Campbell"
                             android:textColor="#0C0C0C"
@@ -93,9 +95,10 @@
                             />
                         <TextView
                             android:id="@+id/date"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="Sarah Campbell"
+                            android:layout_weight="1"
                             android:textColor="#0C0C0C"
                             android:textSize="10sp"
                             android:textStyle="normal"
@@ -103,9 +106,10 @@
                             />
                         <TextView
                             android:id="@+id/popularity"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="Sarah Campbell"
+                            android:layout_weight="1"
                             android:textColor="#0C0C0C"
                             android:textSize="10sp"
                             android:textStyle="normal"

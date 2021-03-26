@@ -79,6 +79,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.UserViewHold
 
                 intent.putExtra("poster", movieresult.getPosterPath());
                 intent.putExtra("vote_count", movieresult.getVoteCount());
+                intent.putExtra("vote_ava", movieresult.getVoteAverage());
                 intent.putExtra("popularity", movieresult.getPopularity());
 
 

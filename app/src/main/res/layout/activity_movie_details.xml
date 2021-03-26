@@ -35,7 +35,7 @@
             </FrameLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:elevation="4dp">
 
                 <LinearLayout
@@ -78,7 +78,7 @@
                             android:text="Sarah Campbell"
                             android:layout_weight="1"
                             android:textColor="#0C0C0C"
-                            android:textSize="12sp"
+                            android:textSize="10sp"
                             android:textStyle="normal"
                             android:layout_gravity="bottom"
                             />

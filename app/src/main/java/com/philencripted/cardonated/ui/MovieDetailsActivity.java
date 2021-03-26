@@ -15,7 +15,9 @@ import com.philencripted.cardonated.R;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     TextView nameTv, voteTv, avgVoteTv,releaseDateTv, descTv, popTv;
-    String name,vote, desc, avgVote,releaseDate, backdropPath, posterPath, popularity;
+    double avgVote, popularity;
+    int vote;
+    String name, desc, releaseDate, backdropPath, posterPath;
     ImageView backdrop, poster;
 
     @Override
@@ -50,11 +52,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         // retrieve other values from intent
         name = intentBundle.getString("title");
-        avgVote = intentBundle.getString("vote_avg");
+        avgVote = intentBundle.getDouble("vote_ava");
         desc = intentBundle.getString("overview");
-        vote = intentBundle.getString("vote_count");
+        vote = intentBundle.getInt("vote_count");
         releaseDate = intentBundle.getString("date");
-        popularity = intentBundle.getString("popularity");
+        popularity = intentBundle.getDouble("popularity");
 
 
 
@@ -68,12 +70,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             //display views
             nameTv.setText(name);
-            voteTv.setText(vote);
+            voteTv.setText("Vote count:\n"+vote);
             descTv.setText(desc);
-            avgVoteTv.setText(avgVote);
-            popTv.setText(popularity);
-            releaseDateTv.setText(releaseDate);
-            popTv.setText(popularity);
+            avgVoteTv.setText("Average vote:\n"+avgVote);
+            popTv.setText("Popularity:\n"+popularity);
+            releaseDateTv.setText("Release date:\n"+releaseDate);
             Glide.with(this).load("https://image.tmdb.org/t/p/w500/"+backdropPath).into(backdrop);
             Glide.with(this).load("https://image.tmdb.org/t/p/w500/"+posterPath).into(poster);
 
@@ -81,7 +82,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
             //debug
             System.out.println("TESTER"+popularity);
-            Log.d("TEST:", avgVote + popularity + vote);
+            Log.d("TEST:", ""+ avgVote + popularity + vote);
 
 
 
